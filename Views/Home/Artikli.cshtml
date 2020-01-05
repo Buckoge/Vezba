@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Artikal>
+
+
+<h1>Artikli</h1>
+<p>Ukupno: @Model.Count()</p>
+<div class="row">
+    @foreach (var p in Model)
+    {
+        <div class="col-md-3 pb-4">
+            <div class="border bg-light rounded p-1">
+                <ul>
+                    <li>Naziv: @p.Naziv</li>
+                    <li>Šifra: @p.Sifra</li>
+                    <li>Cena: @p.Cena</li>
+                </ul>
+            </div>
+        </div>
+    }
+</div>

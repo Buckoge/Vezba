@@ -1,0 +1,24 @@
+﻿@model Vezba.Models.ErrorViewModel
+
+@{
+    ViewData["Title"] = "Kontakt";
+}
+
+<h1>Kontakt vezba</h1>
+<address>Gece Kona 7<br />
+         11160 MML, Beograd<br />
+    <abbr title="telefon">Tel:</abbr>
+    011/347-1965
+    </address>
+
+<form method="post">
+    <textarea name="Poruka"></textarea>
+    <input type="submit" name="Pošalji" value="Pošalji" />
+</form>
+
+
+<h3>@ViewBag.Poruka</h3>
+<!--       _
+       .__(.)< (MEOW)
+        \___)
+ ~~~~~~~~~~~~~~~~~~-->
