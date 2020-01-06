@@ -28,7 +28,7 @@ namespace Vezba.Controllers
 
         public IActionResult Privacy()
         {
-            //test 2 git
+            //test 3 git
             return View();
         }
 
