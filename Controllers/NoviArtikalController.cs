@@ -14,9 +14,9 @@ namespace Vezba.Controllers
     public class NoviArtikalController : Controller
     {
         
-        private readonly VezbaKontekst _vk;
+        private readonly ExerciseContext _vk;
 
-        public NoviArtikalController(VezbaKontekst vk)
+        public NoviArtikalController(ExerciseContext vk)
         {
             _vk = vk;
         }

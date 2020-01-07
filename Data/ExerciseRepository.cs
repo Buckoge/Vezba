@@ -1,33 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Vezba.Data.Entities;
+using Exercise.Data.Entities;
+using Exercise.Data;
 
-namespace Vezba.Data
+namespace Exercise.Data
 {
-    public class VezbaRepository : IVezbaRepository
+    public class ExerciseRepository : IExerciseRepository
     {
-        public readonly VezbaKontekst _vk;
-        private readonly ILogger<VezbaRepository> _logger;
+        public readonly ExerciseContext _ctx;
+        private readonly ILogger<ExerciseRepository> _logger;
 
-        public VezbaRepository(VezbaKontekst vk, ILogger<VezbaRepository> logger)
+        public ExerciseRepository(ExerciseContext ctx, ILogger<ExerciseRepository> logger)
         {
-            _vk = vk;
+            _ctx = ctx;
             _logger = logger;
         }
 
-        public IEnumerable<Artikal> GetAllProducts()
+        public IEnumerable<Product> GetAllProducts()
         {
             try
             {
 
                 _logger.LogInformation("GetAllProducts was called");
 
-                return _vk.Artikli
-                        .OrderBy(p => p.Naziv)
+                return _ctx.Products
+                        .OrderBy(p => p.Title)
                         .ToList();
             }
             catch (Exception ex)

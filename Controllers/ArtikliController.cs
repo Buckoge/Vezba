@@ -13,9 +13,9 @@ namespace Vezba.Controllers
     public class ArtikliController : ControllerBase
     {
         private readonly ILogger<ArtikliController> _logger;
-        private readonly IVezbaRepository _repository;
+        private readonly IExerciseRepository _repository;
 
-        public ArtikliController(IVezbaRepository repository, ILogger<ArtikliController> logger)
+        public ArtikliController(IExerciseRepository repository, ILogger<ArtikliController> logger)
         {
             _repository = repository;
             _logger = logger;

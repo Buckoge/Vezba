@@ -13,9 +13,9 @@ namespace Vezba.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IVezbaRepository _kontekst;
+        private readonly IExerciseRepository _kontekst;
 
-        public HomeController(ILogger<HomeController> logger, IVezbaRepository kontekst)
+        public HomeController(ILogger<HomeController> logger, IExerciseRepository kontekst)
         {
             _logger = logger;
             _kontekst = kontekst;
