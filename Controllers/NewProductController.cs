@@ -5,18 +5,18 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Vezba.Data;
-using Vezba.Data.Entities;
+using Exercise.Data;
+using Exercise.Data.Entities;
 
 namespace Vezba.Controllers
 {
     
-    public class NoviArtikalController : Controller
+    public class NewProductController : Controller
     {
         
         private readonly ExerciseContext _vk;
 
-        public NoviArtikalController(ExerciseContext vk)
+        public NewProductController(ExerciseContext vk)
         {
             _vk = vk;
         }
@@ -35,13 +35,13 @@ namespace Vezba.Controllers
         // POST: NoviArtikal/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Artikal ar)
+        public ActionResult Create(Product ar)
         {
             
             {
                 _vk.Add(ar);
                 _vk.SaveChanges();
-                ViewBag.poruka = "Novi artikal " + ar.Naziv + " je uspešno snimljen";
+                ViewBag.poruka = "Novi artikal " + ar.Title + " je uspešno snimljen";
                 return View();
             }
         }

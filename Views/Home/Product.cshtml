@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Artikal>
+﻿@model IEnumerable<Product>
 
     <link href="~/css/main.css" rel="stylesheet" />
 
@@ -9,7 +9,7 @@
         <thead>
             <tr>
                 <td>Naziv</td>
-                <td>Sifra</td>
+                <td>Kategorija</td>
                 <td>Cena</td>
             </tr>
         </thead>
@@ -17,9 +17,9 @@
             @foreach (var t in Model)
             {
                 <tr>
-                    <td>@t.Naziv</td>
-                    <td>@t.Sifra</td>
-                    <td>@t.Cena</td>
+                    <td>@t.Title</td>
+                    <td>@t.Category</td>
+                    <td>@t.Price</td>
                 </tr>
             }
         </tbody>

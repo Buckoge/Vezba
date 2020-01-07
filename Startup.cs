@@ -9,9 +9,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Vezba.Data;
+using Exercise.Data;
 
-namespace Vezba
+namespace Exercise
 {
     public class Startup
     {
@@ -27,7 +27,7 @@ namespace Vezba
         {
             services.AddDbContext<ExerciseContext>(cfg =>
             {
-                cfg.UseSqlServer(Configuration.GetConnectionString("VezbaConnectionString"));
+                cfg.UseSqlServer(Configuration.GetConnectionString("ExerciseConnectionString"));
             });
 
             services.AddScoped<IExerciseRepository, ExerciseRepository>();

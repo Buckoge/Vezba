@@ -1,6 +1,6 @@
 using System;
 
-namespace Vezba.Models
+namespace Exercise.Models
 {
     public class ErrorViewModel
     {

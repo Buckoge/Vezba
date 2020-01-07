@@ -3,6 +3,6 @@
     "Favorite": "blue"
   },
   "ConnectionStrings": {
-    "VezbaConnectionString": "server=(localdb)\\MSSQLLocalDB;Database=Vezba;Integrated Security=true;MultipleActiveResultSets=true;"
+    "ExerciseConnectionString": "server=(localdb)\\MSSQLLocalDB;Database=Exercise;Integrated Security=true;MultipleActiveResultSets=true;"
   }
 }

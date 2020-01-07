@@ -5,8 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Vezba.Data;
-using Vezba.Models;
+using Exercise.Data;
+using Exercise.Models;
 
 namespace Vezba.Controllers
 {
@@ -32,20 +32,20 @@ namespace Vezba.Controllers
             return View();
         }
 
-        public IActionResult Kontakt()
+        public IActionResult Contact()
         {
             ViewBag.Poruka = "samo cepaj";
             return View();
         }
 
         [HttpPost]
-        public IActionResult Kontakt(string poruka)
+        public IActionResult Contact(string poruka)
         {
             ViewBag.Poruka = "Hvala, stigla je poruka";
             return View();
         }
 
-        public IActionResult Artikli()
+        public IActionResult Product()
         {
             var results = _kontekst.GetAllProducts();
 
