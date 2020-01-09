@@ -34,14 +34,13 @@ namespace Vezba.Controllers
 
         // POST: NoviArtikal/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(Product ar)
+        public ActionResult Create(Product it)
         {
             
             {
-                _vk.Add(ar);
+                _vk.Add(it);
                 _vk.SaveChanges();
-                ViewBag.poruka = "Novi artikal " + ar.Title + " je uspešno snimljen";
+                ViewBag.message = "Novi artikal " + it.Title + " je uspešno snimljen";
                 return View();
             }
         }

@@ -13,12 +13,12 @@ namespace Vezba.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IExerciseRepository _kontekst;
+        private readonly IExerciseRepository _context;
 
-        public HomeController(ILogger<HomeController> logger, IExerciseRepository kontekst)
+        public HomeController(ILogger<HomeController> logger, IExerciseRepository context)
         {
             _logger = logger;
-            _kontekst = kontekst;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -34,28 +34,26 @@ namespace Vezba.Controllers
 
         public IActionResult Contact()
         {
-            ViewBag.Poruka = "samo cepaj";
+            ViewBag.message = "samo cepaj";
             return View();
         }
 
         [HttpPost]
         public IActionResult Contact(string poruka)
         {
-            ViewBag.Poruka = "Hvala, stigla je poruka";
+            ViewBag.message = "Hvala, stigla je poruka";
             return View();
         }
 
         public IActionResult Product()
         {
-            var results = _kontekst.GetAllProducts();
+            var results = _context.GetAllProducts();
 
             return View(results);
         }
         public IActionResult Create()
         {
-            // var Artikli = _kontekst.Artikli
-            //   .OrderBy(a => a.Naziv)
-            //   .ToList();
+           
             return View();
         }
 
