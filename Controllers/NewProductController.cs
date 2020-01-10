@@ -20,19 +20,20 @@ namespace Vezba.Controllers
         {
             _vk = vk;
         }
-        // GET: NoviArtikal
+        // GET: NewItem
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: NoviArtikal/Create
+        // GET: NewItem/Create
         public ActionResult Create()
         {
-            return View();
-        }
 
-        // POST: NoviArtikal/Create
+            return View();
+        }               
+
+        // POST: NewItem/Create
         [HttpPost]
         public ActionResult Create(Product it)
         {
@@ -40,7 +41,7 @@ namespace Vezba.Controllers
             {
                 _vk.Add(it);
                 _vk.SaveChanges();
-                ViewBag.message = "Novi artikal " + it.Title + " je uspešno snimljen";
+                ViewBag.Message = "New Item " + it.Title + " is saved successfully ";                
                 return View();
             }
         }
