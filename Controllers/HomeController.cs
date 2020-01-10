@@ -34,14 +34,14 @@ namespace Vezba.Controllers
 
         public IActionResult Contact()
         {
-            ViewBag.message = "samo cepaj";
+            ViewBag.Message = "Send message";
             return View();
         }
 
         [HttpPost]
         public IActionResult Contact(string poruka)
         {
-            ViewBag.message = "Hvala, stigla je poruka";
+            ViewBag.Message = "Thank you, message is sent";
             return View();
         }
 
